@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read One</title>
+</head>
+<body>
+    <h1>User {{ user[0].id }}</h1>
+    <span>
+        <a href="/">Home</a>
+    </span>
+    <div class="container">
+        <p>Full Name: {{ user[0].first_name}}
+                        {{ user[0].last_name }}
+        </p>
+        <p>Email: {{ user[0].email }}</p>
+        <p>Created On: {{ user[0].created_at }}</p>
+        <p>Last Updated On: {{ user[0].updated_at }}</p>
+    </div>
+    <a href="/user/{{user[0].id}}/edit">Edit</a> 
+    <a href="/delete/{{user[0].id}}">Delete</a>
+</body>
+</html>
+
+<!-- user => [{id: 1, first_name: 't'...}] -->
+<!-- user[0] =>  {id: 1, first_name: 't'...} -->
+<!-- MySql returns data in a list, 
+because "show" only returns 1 user we have access to that user at the first index of the list -->
